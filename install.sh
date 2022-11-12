@@ -4,7 +4,7 @@ git clone https://github.com/behinger/fast-stable-diffusion/ &
 
 
 apt-get update &&
-apt-get install g++ imagemagick git-lfs ffmpeg libsm6 libxext6 vim -y &
+apt-get install g++ imagemagick git-lfs ffmpeg libsm6 libxext6 vim rename unzip -y &
 wait
 
 pip install --upgrade setuptools&
