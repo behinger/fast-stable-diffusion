@@ -10,10 +10,21 @@ pip install --upgrade setuptools
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/conda/lib/"
 pip install bitsandbytes
-pip install xformers
+# Upload xforms wheel!
+pip install xformersWHEEL
+
+
 pip install git+https://github.com/wookayin/gpustat.git@master
 
+# resize images
 mogrify *.jpg -gravity center -crop 512x512+0+0 +repage
+
+# launch automatic!!!
+cd  stable-diffusion-webui
+python3.9 launch.py --share --enable-insecure-extension-access
+
+# IMPORTANT: Launch stable diffusion webui before training!
+
 ```
 # fast-stable-diffusion Colabs, +25-50% speed increase, AUTOMATIC1111 + DreamBooth
 Colab adaptations AUTOMATIC1111 Webui and Dreambooth, train your model using this easy simple and fast colab, all you have to do is enter you huggingface token once, and it will cache all the files in GDrive, including the trained model and you will be able to use it directly from the colab, make sure you use high quality reference pictures for the training, enjoy !!
