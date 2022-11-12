@@ -4,7 +4,7 @@ git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 git clone https://github.com/behinger/fast-stable-diffusion/
 
 apt-get update
-apt-get install g++ imagemagick git-lfs ffmpeg libsm6 libxext6 -y
+apt-get install g++ imagemagick git-lfs ffmpeg libsm6 libxext6 vim -y
 
 pip install --upgrade setuptools
 
