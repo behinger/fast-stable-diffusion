@@ -11,7 +11,8 @@ pip install --upgrade setuptools
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/conda/lib/"
 pip install bitsandbytes
 # Upload xforms wheel!
-pip install xformersWHEEL
+wget https://cloud.wirdreibei.de/s/SXdfcSqsqDrdLf2/download/xformers-0.0.15.dev0+8367685.d20221110-cp39-cp39-linux_x86_64.whl
+pip install xformers-0.0.15.dev0+8367685.d20221110-cp39-cp39-linux_x86_64.whl
 
 
 pip install git+https://github.com/wookayin/gpustat.git@master
@@ -20,8 +21,10 @@ pip install git+https://github.com/wookayin/gpustat.git@master
 mogrify *.jpg -gravity center -crop 512x512+0+0 +repage
 
 # launch automatic!!!
+python -m venv venvwebui
+source venvwebui/bin/activate
 cd  stable-diffusion-webui
-python3.9 launch.py --share --enable-insecure-extension-access
+python3.9 launch.py --share --enable-insecure-extension-access --disable-safe-unpickle --ckpt-directory=/content/Fast-Dreambooth/Sessions/*/
 
 # IMPORTANT: Launch stable diffusion webui before training!
 
