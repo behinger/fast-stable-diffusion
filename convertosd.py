@@ -199,7 +199,7 @@ if __name__ == "__main__":
     
     model_path = sys.argv[1]
     checkpoint_path= sys.argv[2]
-    print(model_math)
+    print(model_path)
     print(checkpoint_path)
     
     unet_path = osp.join(model_path, "unet", "diffusion_pytorch_model.bin")
