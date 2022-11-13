@@ -1,30 +1,12 @@
 ## run on vast.ai
 ```bash
-git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
-git clone https://github.com/behinger/fast-stable-diffusion/
-
-apt-get update
-apt-get install g++ imagemagick git-lfs ffmpeg libsm6 libxext6 vim -y
-
-pip install --upgrade setuptools
-
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/conda/lib/"
-pip install bitsandbytes
-# Upload xforms wheel!
-wget https://cloud.wirdreibei.de/s/SXdfcSqsqDrdLf2/download/xformers-0.0.15.dev0+8367685.d20221110-cp39-cp39-linux_x86_64.whl
-pip install xformers-0.0.15.dev0+8367685.d20221110-cp39-cp39-linux_x86_64.whl
-
-
-pip install git+https://github.com/wookayin/gpustat.git@master
+wget https://github.com/behinger/fast-stable-diffusion/raw/main/install.sh && bash install.sh
 
 # resize images
 mogrify *.jpg -gravity center -crop 512x512+0+0 +repage
 
 # launch automatic!!!
-python -m venv venvwebui
-source venvwebui/bin/activate
-cd  stable-diffusion-webui
-python3.9 launch.py --share --enable-insecure-extension-access --disable-safe-unpickle --ckpt-directory=/content/Fast-Dreambooth/Sessions/*/
+source venvwebui/bin/activate && cd  stable-diffusion-webui && python3.9 launch.py --share --enable-insecure-extension-access --disable-safe-unpickle --ckpt-dir=/content/Fast-Dreambooth/Sessions/*/
 
 # IMPORTANT: Launch stable diffusion webui before training!
 
